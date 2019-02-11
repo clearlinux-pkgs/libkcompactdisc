@@ -5,23 +5,23 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkcompactdisc
-Version  : 18.08.0
-Release  : 1
-URL      : https://download.kde.org/stable/applications/18.08.0/src/libkcompactdisc-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/libkcompactdisc-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/libkcompactdisc-18.08.0.tar.xz.sig
+Version  : 18.12.2
+Release  : 2
+URL      : https://download.kde.org/stable/applications/18.12.2/src/libkcompactdisc-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/libkcompactdisc-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/libkcompactdisc-18.12.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
-Requires: libkcompactdisc-lib
-Requires: libkcompactdisc-license
-Requires: libkcompactdisc-locales
+Requires: libkcompactdisc-lib = %{version}-%{release}
+Requires: libkcompactdisc-license = %{version}-%{release}
+Requires: libkcompactdisc-locales = %{version}-%{release}
 BuildRequires : alsa-lib-dev
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : glibc-dev
 BuildRequires : phonon-dev
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
+BuildRequires : qtbase-dev mesa-dev
 
 %description
 This directory contains the WorkMan library.
@@ -31,8 +31,8 @@ CD-Player-UIs.
 %package dev
 Summary: dev components for the libkcompactdisc package.
 Group: Development
-Requires: libkcompactdisc-lib
-Provides: libkcompactdisc-devel
+Requires: libkcompactdisc-lib = %{version}-%{release}
+Provides: libkcompactdisc-devel = %{version}-%{release}
 
 %description dev
 dev components for the libkcompactdisc package.
@@ -41,7 +41,7 @@ dev components for the libkcompactdisc package.
 %package lib
 Summary: lib components for the libkcompactdisc package.
 Group: Libraries
-Requires: libkcompactdisc-license
+Requires: libkcompactdisc-license = %{version}-%{release}
 
 %description lib
 lib components for the libkcompactdisc package.
@@ -64,26 +64,26 @@ locales components for the libkcompactdisc package.
 
 
 %prep
-%setup -q -n libkcompactdisc-18.08.0
+%setup -q -n libkcompactdisc-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535235969
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549877060
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535235969
+export SOURCE_DATE_EPOCH=1549877060
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/libkcompactdisc
-cp COPYING %{buildroot}/usr/share/doc/libkcompactdisc/COPYING
-cp COPYING.LIB %{buildroot}/usr/share/doc/libkcompactdisc/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/libkcompactdisc
+cp COPYING %{buildroot}/usr/share/package-licenses/libkcompactdisc/COPYING
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/libkcompactdisc/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -111,9 +111,9 @@ popd
 /usr/lib64/libKF5CompactDisc.so.5.0.0
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/libkcompactdisc/COPYING
-/usr/share/doc/libkcompactdisc/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/libkcompactdisc/COPYING
+/usr/share/package-licenses/libkcompactdisc/COPYING.LIB
 
 %files locales -f libkcompactdisc.lang
 %defattr(-,root,root,-)
