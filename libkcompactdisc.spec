@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : libkcompactdisc
-Version  : 20.12.0
-Release  : 24
-URL      : https://download.kde.org/stable/release-service/20.12.0/src/libkcompactdisc-20.12.0.tar.xz
-Source0  : https://download.kde.org/stable/release-service/20.12.0/src/libkcompactdisc-20.12.0.tar.xz
-Source1  : https://download.kde.org/stable/release-service/20.12.0/src/libkcompactdisc-20.12.0.tar.xz.sig
+Version  : 20.12.1
+Release  : 25
+URL      : https://download.kde.org/stable/release-service/20.12.1/src/libkcompactdisc-20.12.1.tar.xz
+Source0  : https://download.kde.org/stable/release-service/20.12.1/src/libkcompactdisc-20.12.1.tar.xz
+Source1  : https://download.kde.org/stable/release-service/20.12.1/src/libkcompactdisc-20.12.1.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
@@ -66,15 +66,15 @@ locales components for the libkcompactdisc package.
 
 
 %prep
-%setup -q -n libkcompactdisc-20.12.0
-cd %{_builddir}/libkcompactdisc-20.12.0
+%setup -q -n libkcompactdisc-20.12.1
+cd %{_builddir}/libkcompactdisc-20.12.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1607726323
+export SOURCE_DATE_EPOCH=1610054363
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -90,11 +90,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1607726323
+export SOURCE_DATE_EPOCH=1610054363
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkcompactdisc
-cp %{_builddir}/libkcompactdisc-20.12.0/COPYING %{buildroot}/usr/share/package-licenses/libkcompactdisc/7c203dee3a03037da436df03c4b25b659c073976
-cp %{_builddir}/libkcompactdisc-20.12.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkcompactdisc/ba8966e2473a9969bdcab3dc82274c817cfd98a1
+cp %{_builddir}/libkcompactdisc-20.12.1/COPYING %{buildroot}/usr/share/package-licenses/libkcompactdisc/7c203dee3a03037da436df03c4b25b659c073976
+cp %{_builddir}/libkcompactdisc-20.12.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkcompactdisc/ba8966e2473a9969bdcab3dc82274c817cfd98a1
 pushd clr-build
 %make_install
 popd
