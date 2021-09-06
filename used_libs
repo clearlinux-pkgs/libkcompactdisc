@@ -5,5 +5,4 @@ libQt5DBus.so.5
 libasound.so.2
 libc.so.6
 libphonon4qt5.so.4
-libpthread.so.0
 libstdc++.so.6
