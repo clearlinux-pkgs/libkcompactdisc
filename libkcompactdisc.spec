@@ -7,7 +7,7 @@
 #
 Name     : libkcompactdisc
 Version  : 23.04.1
-Release  : 51
+Release  : 52
 URL      : https://download.kde.org/stable/release-service/23.04.1/src/libkcompactdisc-23.04.1.tar.xz
 Source0  : https://download.kde.org/stable/release-service/23.04.1/src/libkcompactdisc-23.04.1.tar.xz
 Source1  : https://download.kde.org/stable/release-service/23.04.1/src/libkcompactdisc-23.04.1.tar.xz.sig
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684777958
+export SOURCE_DATE_EPOCH=1685640113
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -110,7 +110,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684777958
+export SOURCE_DATE_EPOCH=1685640113
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkcompactdisc
 cp %{_builddir}/libkcompactdisc-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkcompactdisc/7c203dee3a03037da436df03c4b25b659c073976 || :
@@ -129,7 +129,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5CompactDisc.so
 /usr/include/KF5/KCompactDisc/KCompactDisc
 /usr/include/KF5/KCompactDisc/kcompactdisc.h
 /usr/include/KF5/KCompactDisc/kcompactdisc_export.h
@@ -142,7 +141,6 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5CompactDisc.so.5
 /V3/usr/lib64/libKF5CompactDisc.so.5.0.0
 /usr/lib64/libKF5CompactDisc.so.5
 /usr/lib64/libKF5CompactDisc.so.5.0.0
