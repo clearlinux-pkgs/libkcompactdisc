@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkcompactdisc
-Version  : 23.04.3
-Release  : 54
-URL      : https://download.kde.org/stable/release-service/23.04.3/src/libkcompactdisc-23.04.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.04.3/src/libkcompactdisc-23.04.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.04.3/src/libkcompactdisc-23.04.3.tar.xz.sig
+Version  : 23.08.0
+Release  : 55
+URL      : https://download.kde.org/stable/release-service/23.08.0/src/libkcompactdisc-23.08.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.0/src/libkcompactdisc-23.08.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.0/src/libkcompactdisc-23.08.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
@@ -69,15 +69,15 @@ locales components for the libkcompactdisc package.
 
 
 %prep
-%setup -q -n libkcompactdisc-23.04.3
-cd %{_builddir}/libkcompactdisc-23.04.3
+%setup -q -n libkcompactdisc-23.08.0
+cd %{_builddir}/libkcompactdisc-23.08.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688839641
+export SOURCE_DATE_EPOCH=1693008040
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -110,7 +110,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1688839641
+export SOURCE_DATE_EPOCH=1693008040
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkcompactdisc
 cp %{_builddir}/libkcompactdisc-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkcompactdisc/7c203dee3a03037da436df03c4b25b659c073976 || :
@@ -138,6 +138,7 @@ popd
 /usr/lib64/cmake/KF5CompactDisc/KF5CompactDiscTargets-relwithdebinfo.cmake
 /usr/lib64/cmake/KF5CompactDisc/KF5CompactDiscTargets.cmake
 /usr/lib64/libKF5CompactDisc.so
+/usr/lib64/qt5/mkspecs/modules/qt_KCompactDisc.pri
 
 %files lib
 %defattr(-,root,root,-)
