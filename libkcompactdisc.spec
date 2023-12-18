@@ -8,11 +8,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : libkcompactdisc
-Version  : 23.08.3
-Release  : 59
-URL      : https://download.kde.org/stable/release-service/23.08.3/src/libkcompactdisc-23.08.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/23.08.3/src/libkcompactdisc-23.08.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/23.08.3/src/libkcompactdisc-23.08.3.tar.xz.sig
+Version  : 23.08.4
+Release  : 60
+URL      : https://download.kde.org/stable/release-service/23.08.4/src/libkcompactdisc-23.08.4.tar.xz
+Source0  : https://download.kde.org/stable/release-service/23.08.4/src/libkcompactdisc-23.08.4.tar.xz
+Source1  : https://download.kde.org/stable/release-service/23.08.4/src/libkcompactdisc-23.08.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
@@ -71,15 +71,15 @@ locales components for the libkcompactdisc package.
 
 
 %prep
-%setup -q -n libkcompactdisc-23.08.3
-cd %{_builddir}/libkcompactdisc-23.08.3
+%setup -q -n libkcompactdisc-23.08.4
+cd %{_builddir}/libkcompactdisc-23.08.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1702016271
+export SOURCE_DATE_EPOCH=1702933796
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -138,7 +138,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1702016271
+export SOURCE_DATE_EPOCH=1702933796
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkcompactdisc
 cp %{_builddir}/libkcompactdisc-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libkcompactdisc/7c203dee3a03037da436df03c4b25b659c073976 || :
