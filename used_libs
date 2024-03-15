@@ -1,8 +1,8 @@
-libKF5I18n.so.5
-libKF5Solid.so.5
-libQt5Core.so.5
-libQt5DBus.so.5
+libKF6I18n.so.6
+libKF6Solid.so.6
+libQt6Core.so.6
+libQt6DBus.so.6
 libasound.so.2
 libc.so.6
-libphonon4qt5.so.4
+libphonon4qt6.so.4
 libstdc++.so.6
